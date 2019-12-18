@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  lighttpd:
+    image: amphorae/lighttpd
+    build: .
+    volumes:
+      - .docker/var/www/localhost/htdocs/:/var/www/localhost/htdocs/
+      - .docker/etc/lighttpd/lighttpd.conf:/etc/lighttpd/lighttpd.conf
+    ports:
+      - 8080:80
