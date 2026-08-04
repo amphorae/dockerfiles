@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  pzserver:
+    image: ghcr.io/amphorae/pzserver:stable
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pzserver
+    restart: unless-stopped
