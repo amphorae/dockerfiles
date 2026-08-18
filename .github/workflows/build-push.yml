@@ -7,7 +7,6 @@ on:
       - main
     paths:
       - 'pzserver/Dockerfile'
-      - 'pzserver/update_zomboid.txt'
       - '.github/workflows/build-push.yml'
 
 permissions:

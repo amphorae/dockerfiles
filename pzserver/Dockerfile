@@ -3,9 +3,7 @@ FROM steamcmd/steamcmd:debian-trixie AS download
 ENV HOME=/root
 ENV PZ_INSTALL_DIR=/opt/pzserver
 RUN mkdir -p ${PZ_INSTALL_DIR}
-COPY update_zomboid.txt ${HOME}/update_zomboid.txt
-RUN steamcmd +quit && \
-    steamcmd +runscript ${HOME}/update_zomboid.txt
+RUN steamcmd +force_install_dir ${PZ_INSTALL_DIR} +login anonymous +app_update 380870 validate +quit
 
 
 # Runtime image
